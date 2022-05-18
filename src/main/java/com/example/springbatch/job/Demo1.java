@@ -63,7 +63,7 @@ public class Demo1 {
     public FlatFileItemReader<EmployeeDTO> employeeReader() throws Exception {
         FlatFileItemReader<EmployeeDTO> reader = new FlatFileItemReader<>();
         reader.setResource(inputFileResource(null));
-        reader.setLineMapper(new DefaultLineMapper<EmployeeDTO>() {{
+        reader.setLineMapper(new DefaultLineMapper<EmployeeDTO>() {
             setLineTokenizer(new DelimitedLineTokenizer() {{
                 setNames("employeeId", "firstName", "lastName", "email", "age");
                 setDelimiter(",");
